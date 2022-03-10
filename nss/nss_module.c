@@ -33,6 +33,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pointer_guard.h>
+#include <sysdep.h>
+#include <libc-diag.h>
 
 /* Suffix after .so of NSS service modules.  This is a bit of magic,
    but we assume LIBNSS_FILES_SO looks like "libnss_files.so.2" and we
@@ -40,6 +42,11 @@
    except through the auto-generated lib-names.h and some static
    pointer manipulation.  The "-1" accounts for the trailing NUL
    included in the sizeof.  */
+
+/* clang issues an warning adding 'unsigned long' to a string does not append
+   to the string, however it is exactly what code means here.  */
+DIAG_PUSH_NEEDS_COMMENT_CLANG;
+DIAG_IGNORE_NEEDS_COMMENT_CLANG (18, "-Wstring-plus-int");
 static const char *const __nss_shlib_revision
 	= &LIBNSS_FILES_SO[sizeof("libnss_files.so") - 1];
 
