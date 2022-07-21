@@ -56,4 +56,22 @@ __option_is_end (const struct argp_option *__opt)
 }
 weak_alias (__option_is_end, _option_is_end)
 
-#endif
+int
+__option_is_short (const struct argp_option *__opt)
+{
+  if (__opt->flags & OPTION_DOC)
+    return 0;
+  else
+    {
+      int __key = __opt->key;
+      return __key > 0 && __key <= UCHAR_MAX && isprint (__key);
+    }
+}
+weak_alias (__option_is_short, _option_is_short)
+
+int
+__option_is_end (const struct argp_option *__opt)
+{
+  return !__opt->key && !__opt->name && !__opt->doc && !__opt->group;
+}
+weak_alias (__option_is_end, _option_is_end)
