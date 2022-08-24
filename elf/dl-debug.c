@@ -18,6 +18,7 @@
 
 #include <assert.h>
 #include <ldsodefs.h>
+#include <libc-diag.h>
 
 
 /* These are the members in the public `struct link_map' type.
