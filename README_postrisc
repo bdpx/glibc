@@ -1,0 +1,4 @@
+
+upstream: git@github.com:bminor/glibc.git
+
+clang branch: azanella/clang
