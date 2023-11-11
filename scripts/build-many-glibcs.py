@@ -394,6 +394,8 @@ class Context(object):
                         gcc_cfg=['--with-multilib-list=mcmov,mhard-float'],
                         glibcs=[{'variant': 'soft'},
                                 {'variant': 'hard', 'ccopts': '-mhard-float'}])
+        self.add_config(arch='postrisc',
+                        os_name='linux-gnu')
         self.add_config(arch='powerpc',
                         os_name='linux-gnu',
                         gcc_cfg=['--disable-multilib', '--enable-secureplt'],
