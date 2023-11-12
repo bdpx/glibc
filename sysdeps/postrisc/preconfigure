@@ -1,0 +1,6 @@
+# preconfigure fragment for postrisc.
+
+case "$machine" in
+postrisc*)
+		base_machine=postrisc machine=postrisc/postrisc64 ;;
+esac
