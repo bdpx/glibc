@@ -58,6 +58,11 @@ __NTH (inet_pton (int __af,
   return __glibc_fortify (inet_pton, __sz, sizeof (char),
 			  __glibc_objsize (__dst),
 			  __af, __src, __dst);
+#else
+  return __glibc_fortify (inet_pton, 0, sizeof (char),
+			  __glibc_objsize (__dst),
+			  __af, __src, __dst);
+#endif
 };
 
 #endif /* bits/inet-fortified.h.  */
