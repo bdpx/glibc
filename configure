@@ -8007,6 +8007,7 @@ esac
 fi ;;
 esac
 fi
+libc_cv_cc_wimplicit_fallthrough=
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $libc_cv_cc_wimplicit_fallthrough" >&5
 printf "%s\n" "$libc_cv_cc_wimplicit_fallthrough" >&6; }
 if test "$TEST_CC" = "$CC"; then

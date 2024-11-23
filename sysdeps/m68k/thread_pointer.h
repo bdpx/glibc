@@ -27,4 +27,9 @@ __thread_pointer (void)
   return __m68k_read_tp ();
 }
 
+extern void *__tls_get_addr (tls_index *ti);
+
+/* Value used for dtv entries for which the allocation is delayed.  */
+#define TLS_DTV_UNALLOCATED_VALUE -1l
+
 #endif /* _SYS_THREAD_POINTER_H */
