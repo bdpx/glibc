@@ -32,7 +32,6 @@
 #endif
 
 extern __typeof (__redirect_strstr) __strstr_sse2_unaligned attribute_hidden;
-extern __typeof (__redirect_strstr) __strstr_generic attribute_hidden;
 
 #include "string/strstr.c"
 
