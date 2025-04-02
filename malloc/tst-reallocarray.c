@@ -23,6 +23,8 @@
 #include <libc-diag.h>
 #include "tst-malloc-aux.h"
 
+#include "tst-malloc-aux.h"
+
 static void *
 reallocarray_nowarn (void *ptr, size_t nmemb, size_t size)
 {
