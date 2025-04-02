@@ -28,6 +28,7 @@
 #include <support/xthread.h>
 #include "tst-malloc-aux.h"
 
+#include "tst-malloc-aux.h"
 
 typedef struct TestCase {
   size_t size;
